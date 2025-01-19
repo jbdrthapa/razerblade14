@@ -1,0 +1,10 @@
+[Unit]
+Description=Enable Razer Blade 14 2023 internal speakers (card 3)
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -c "/etc/systemd/user/enable-speakers.sh 3" 
+RemainAfterExit=no
+
+[Install]
+WantedBy=default.target
