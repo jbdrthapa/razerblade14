@@ -1,4 +1,4 @@
-card_indx=`/usr/bin/aplay -l | grep -i ALC298 | head -c 6 | tail -c 1`
+card_indx=`sudo -u '#1000' XDG_RUNTIME_DIR=/run/user/1000 /usr/bin/pactl list | grep -A2 'Realtek ALC298' | /usr/bin/pactl list | grep -B4 'Realtek ALC298' | grep "alsa.card = " | tail -c 3 | head -c 1`
 card_id="hwC"$card_indx"D0"
 echo "Card index : $card_id"
 
